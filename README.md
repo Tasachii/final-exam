@@ -3,3 +3,9 @@
 - Fork, then, clone this repo
 - Read the instructions given in the course's Google Classroom and start coding
 - Once you are done, push your final code to your Github repo and modify this README to report on the work you have done
+
+
+i try to do triangle
+but i don't understand not much
+please give me some point
+thank you teacher
