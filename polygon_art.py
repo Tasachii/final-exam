@@ -2,7 +2,7 @@ import turtle
 import random
 
 
-class Triangle:
+class Polygon:
     def __init__(self, num_sides, color, speedx, speedy, locationx, locationy):
         self.num_sides = num_sides
         self.color = color
@@ -45,7 +45,7 @@ class Triangle:
 reduction_ratio = 0.618
 
 # reposition the turtle and get a new location
-def move_triangle(location, size, orientation, color, border_size):
+def move_polygon(location, size):
     size *= reduction_ratio
     turtle.penup()
     turtle.forward(size * (1 - reduction_ratio) / 2)
@@ -54,7 +54,6 @@ def move_triangle(location, size, orientation, color, border_size):
     turtle.right(90)
     location[0] = turtle.pos()[0]
     location[1] = turtle.pos()[1]
-    draw_polygon(num_sides, size, orientation, location, color, border_size)
 
 
 # adjust the size according to the reduction ratio
@@ -76,12 +75,12 @@ orientation = []
 location = []
 border_size = []
 ball_color = []
-Triangle.initilizing(xpos, ypos, vx, vy, ball_color, canvas_width, canvas_height, num_sides)
+Polygon.initilizing(num_sides, size, orientation, location, color, border_size)
 while True:
     turtle.clear()
     for i in range(num_sides):
-        num_sides.draw_circle(ball_color[i], ball_radius, xpos[i], ypos[i])
-        num_sides.move_circle(i, xpos, ypos, vx, vy, canvas_width, canvas_height, ball_radius)
+        num_sides.draw_polygon(num_sides, size, orientation, location, color, border_size)
+        num_sides.move_polygon(location, size)
     turtle.update()
 
 # hold the window; close it by clicking the window close 'x' mark
